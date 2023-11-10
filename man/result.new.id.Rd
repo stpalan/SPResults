@@ -5,27 +5,44 @@
 \title{result.new.id}
 \usage{
 result.new.id(
-  n = 4,
-  resultvar,
+  id.n = 4,
+  resultvar = "Result",
   use_lowercase = T,
   use_uppercase = F,
   use_numeric = T
 )
 }
 \arguments{
-\item{n}{number of random ID characters}
+\item{id.n}{The number of random ID characters.}
 
-\item{resultvar}{result variable to check for ID uniqueness}
+\item{resultvar}{a character vector containing the name of the result
+variable to check for ID uniqueness}
+
+\item{use_lowercase}{a logical value indicating whether lower case letters 
+should be used for the ID}
+
+\item{use_uppercase}{a logical value indicating whether upper case letters 
+should be used for the ID}
+
+\item{use_numeric}{a logical value indicating whether numeric digits' should
+be used for the ID}
 }
 \description{
 Draws a new, unique, random result ID.
 }
 \examples{
+# Create a new, random, 4-character ID that is unique among all IDs in the
+'Result' results object:
+
 result.new.id()
-result.new.id(n = 4, resultvar = "Result")
-Creates a new, random, 4-character ID that is unique among all IDs in the 'Result' results object
+result.new.id(id.n = 4, resultvar = "Result")
+
+
+# Creates a new, random, 6-character ID that uses lower case and upper case
+letter but no digits and is unique among all IDs in the 'main' results
+object:
+
 result.new.id(6, resultvar = "main", use_uppercase = T, use_numeric = F)
-Creates a new, random, 6-character ID that is unique among all IDs in the 'main' results object
 }
 \keyword{ID}
 \keyword{results,}
