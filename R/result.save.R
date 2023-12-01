@@ -1,18 +1,12 @@
 #' result.save
 #'
-#' Saves a result (a number, text, vector, list, table, plot, etc.) with proper
-#' documentation.
+#' Saves a result (a number, text, vector, list, table, plot, etc.) with proper documentation.
 #' @param data the result data to be saved
-#' @param id unique ID of this result. If not specified, a unique Id is randomly
-#' generated and returned.
+#' @param id unique ID of this result. If not specified, a unique Id is randomly generated and returned.
 #' @param resultvar result variable to save to
-#' @param label designation of this result in the research article
-#' (e.g., 'Table 2')
+#' @param label designation of this result in the research article (e.g., 'Table 2')
 #' @param type type of result, i.e., 'Regression', 'Pairwise t-Test', etc.
-#' @param description longer description of the result, e.g., 'Test for a 
-#' treatment effect in the pooled data.'
-#' @param version_info_verbose a logical value indicating whether version
-#' information for R and packages should be saved with every result
+#' @param description longer description of the result, e.g., 'Test for a treatment effect in the pooled data.'
 #' @param id.n the number of random ID characters.
 #' @param use_lowercase a logical value indicating whether lower case letters 
 #' should be used for the ID
@@ -39,11 +33,10 @@ result.save <- function(data = NULL,
                         label = NA,
                         type = NA,
                         description = NA,
-                        version_info_verbose = TRUE,
                         id.n = 4,
-                        use_lowercase = TRUE,
-                        use_uppercase = FALSE,
-                        use_numeric = TRUE
+                        use_lowercase = T,
+                        use_uppercase = F,
+                        use_numeric = T
                         ) {
 
   
@@ -71,7 +64,7 @@ result.save <- function(data = NULL,
   } else {
     r.orig <- list()
     r.orig[["Summary"]]<-list()
-    r.orig[["Summary"]][["lastUpdate"]]<-Sys.time()
+    r.orig[["Summary"]][["lastUpdate"]] <- Sys.time()
     r.orig[["Summary"]][["sessionInfo"]] <- sessionInfo()
   }
   
@@ -92,7 +85,7 @@ result.save <- function(data = NULL,
   
   # Saves result to results object
   r.orig[[id]] <- r
-  r.orig[["Summary"]][["lastUpdate"]]<-Sys.time()
+  r.orig[["Summary"]][["LastUpdate"]]<-Sys.time()
   
   # Checks package version information, warns in case of changes and updates
   if(!identical(r.orig[["Summary"]][["sessionInfo"]],sessionInfo())){
