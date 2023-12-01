@@ -105,7 +105,7 @@ result.save <- function(data = NULL,
 
   # Prints ID if ID was not set by user
   if (!id.set) {
-    print(paste("The ID is:")) # ,id))
+    print(paste("The ID is:"))
     return(id)
   }
 }
