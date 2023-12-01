@@ -11,24 +11,31 @@ result.save(
   label = NA,
   type = NA,
   description = NA,
+  version_info_verbose = TRUE,
   id.n = 4,
-  use_lowercase = T,
-  use_uppercase = F,
-  use_numeric = T
+  use_lowercase = TRUE,
+  use_uppercase = FALSE,
+  use_numeric = TRUE
 )
 }
 \arguments{
 \item{data}{the result data to be saved}
 
-\item{id}{unique ID of this result. If not specified, a unique Id is randomly generated and returned.}
+\item{id}{unique ID of this result. If not specified, a unique Id is randomly
+generated and returned.}
 
 \item{resultvar}{result variable to save to}
 
-\item{label}{designation of this result in the research article (e.g., 'Table 2')}
+\item{label}{designation of this result in the research article
+(e.g., 'Table 2')}
 
 \item{type}{type of result, i.e., 'Regression', 'Pairwise t-Test', etc.}
 
-\item{description}{longer description of the result, e.g., 'Test for a treatment effect in the pooled data.'}
+\item{description}{longer description of the result, e.g., 'Test for a 
+treatment effect in the pooled data.'}
+
+\item{version_info_verbose}{a logical value indicating whether version
+information for R and packages should be saved with every result}
 
 \item{id.n}{the number of random ID characters.}
 
@@ -42,7 +49,8 @@ should be used for the ID}
 be used for the ID}
 }
 \description{
-Saves a result (a number, text, vector, list, table, plot, etc.) with proper documentation.
+Saves a result (a number, text, vector, list, table, plot, etc.) with proper
+documentation.
 }
 \examples{
 result.save(table(x),
