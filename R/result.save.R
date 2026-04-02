@@ -86,7 +86,7 @@ result.save <- function(data = NULL,
   
   # Saves result to results object
   r.orig[[id]] <- r
-  r.orig[["Summary"]][["LastUpdate"]]<-Sys.time()
+  r.orig[["Summary"]][["lastUpdate"]]<-Sys.time()
   
   # Checks package version information, warns in case of changes and updates
   if(!identical(r.orig[["Summary"]][["sessionInfo"]],sessionInfo())){
