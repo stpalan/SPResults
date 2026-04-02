@@ -11,6 +11,7 @@ result.save(
   label = NA,
   type = NA,
   description = NA,
+  version_info_verbose = F,
   id.n = 4,
   use_lowercase = T,
   use_uppercase = F,
@@ -38,7 +39,7 @@ should be used for the ID}
 \item{use_uppercase}{a logical value indicating whether upper case letters 
 should be used for the ID}
 
-\item{use_numeric}{a logical value indicating whether numeric digits' should
+\item{use_numeric}{a logical value indicating whether numeric digits should
 be used for the ID}
 }
 \description{

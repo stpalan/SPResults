@@ -31,7 +31,7 @@ result.new.id <- function(id.n = 4, resultvar = "Result", use_lowercase = T, use
   
   # Checks ------------------------------------------------------------------
   
-  # if(use_lowercase | use_uppercase | use_numeric == F) stop("you need to allow at least one type of symbol (lowercase, uppercase, numeric)")
+  if(use_lowercase ==F & use_uppercase == F & use_numeric == F) stop("you need to allow at least one type of symbol (lowercase, uppercase, numeric)")
   
   # Defines vectors of legal symbols to use to avoid symbols that may look alike in some fonts
   legal.lowercase <- c("a","b","c","d","e","f","g","h","i","j","k","m","n","p","q","r","s","t","u","v","w","x","y","z")
